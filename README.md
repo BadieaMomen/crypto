@@ -1,4 +1,4 @@
-# 🔐 Crypto Algorithms Project
+#  Crypto Algorithms Project
 
 A collection of classic encryption algorithms implemented in Python from scratch — **no external cryptographic libraries used**. This project aims to demonstrate the logic and internal workings of various encryption algorithms through clear functions, modular design, and comments.
 
@@ -62,8 +62,6 @@ A basic Caesar Cipher implementation using Python with a graphical user interfac
 - `tkinter` (included with Python) for GUI
 
 ---
-
-## 📚 Notes
 
 
 
