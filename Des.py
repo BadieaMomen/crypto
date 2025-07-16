@@ -10,18 +10,18 @@
 
 # ################# functions
 
-def str_to_bin(text):
+def str_to_bin(text): # لكي احول من نص الى باينري 
     return ''.join(format(ord(i),'08b') for i in text)
 
-def bin_to_text(bin_str):
+def bin_to_text(bin_str):# العكس من باينري اللى نص عن فك التشفير 
     chars = [bin_str[i:i+8] for i in range(0, len(bin_str), 8)]
     return ''.join(chr(int(char, 2)) for char in chars)
 
-def perute(block:str ,table:list)-> str:
+def perute(block:str ,table:list)-> str:# خلط وتبديل بناء على جدول معين يتم ارساله للداله
     return ''.join(block[i-1] for i in table)
 
 # Initial Permutation Table
-def splitplaintext(block:str):
+def splitplaintext(block:str): # عشان افصل النص الى قسمين 
     return block[:32], block[32:]
 
 def split_into_blocks(bin_text):
@@ -32,10 +32,11 @@ def split_into_blocks(bin_text):
 def expand(block32:str):
     return ''.join(block32[i-1] for i in E)
 
-# left shift funiction
+# left shift funiction 
 def left_rotat(bloc_key,shift):
     return bloc_key[shift:] +bloc_key[:shift] #first bit will be last
 
+# يتم الخلط بناء على هذا الجدو ل
 IP = [ 
     58, 50, 42, 34, 26, 18, 10, 2,
     60, 52, 44, 36, 28, 20, 12, 4,
@@ -183,8 +184,7 @@ def des_round(L, R, K):
     new_R = xor(L, f_function(R, K))
     return new_L, new_R
 
-# ✅ تنفيذ 16 جولة
-
+# يتم اللف على 16 دورة 
 def des_rounds(L, R, keys):
     for i in range(16):
         L, R = des_round(L, R, keys[i])
